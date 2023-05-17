@@ -290,7 +290,8 @@ https://testproj-8vvb.onrender.com/posts
 {
   "_comment":"it is formdata",
   "body": "type: string; text message; required",
-  "id": "type: string; it is user_id; required"
+  "id": "type: string; it is user_id; required",
+  "any_name": "unlimited files of media"
 }
 ```
 
@@ -319,7 +320,38 @@ https://testproj-8vvb.onrender.com/posts
 ### Входные данные
 ```json
 {
-  "":""
+  "_comment":"it is formdata",
+  "body": "type: string; text message; required",
+  "id": "type: string; it is user_id; required",
+  "any_name": "unlimited files of media"
+}
+```
+### Выходные данные 
+```json
+{
+  "post_id": "type: uuid",
+  "message": "type: string",
+  "media": "type: string[]",
+  "user_id": "type: uuid",
+  "created_At": "type: Date"
+}
+```
+
+### Удаление поста
+
+```url
+# Method
+DELETE
+# Short
+/
+# Full Example URL
+https://testproj-8vvb.onrender.com/posts
+```
+
+### Входные данные
+```json
+{
+  "post_id": "type: uuid"
 }
 ```
 ### Выходные данные 
