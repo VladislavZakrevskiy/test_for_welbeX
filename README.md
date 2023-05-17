@@ -4,7 +4,7 @@
 <ol>
   <li><a name='func'>Функционал по ТЗ</a></li>
   <li><a name='install'>Инструкция по запуску</a></li>
-  <a name='documentation'><li>Документация</li></a>
+  <a name='documentation'>Документация</a>
 </ol>
 
 ## [Функции API по ТЗ](#func) 
