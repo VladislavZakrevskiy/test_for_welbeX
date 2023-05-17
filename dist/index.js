@@ -11,6 +11,7 @@ var authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 var postRoutes_1 = __importDefault(require("./routes/postRoutes"));
 var errorMiddleware_1 = require("./middlewares/errorMiddleware");
 var express_fileupload_1 = __importDefault(require("express-fileupload"));
+var path_1 = __importDefault(require("path"));
 dotenv_1.default.config();
 var app = (0, express_1.default)();
 var port = process.env.PORT || 5000;
@@ -21,6 +22,7 @@ app.use((0, cors_1.default)({
     origin: process.env.CLIENT_URL
 }));
 app.use((0, express_fileupload_1.default)());
+app.use(express_1.default.static(path_1.default.resolve(__dirname, 'files')));
 app.use('/auth', authRoutes_1.default);
 app.use('/posts', postRoutes_1.default);
 app.use(errorMiddleware_1.ErrorMiddleware);

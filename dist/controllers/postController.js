@@ -161,6 +161,29 @@ var postsController = (function () {
             });
         });
     };
+    postsController.prototype.delete = function (req, res, next) {
+        return __awaiter(this, void 0, void 0, function () {
+            var post_id, response, e_6;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        post_id = req.body.post_id;
+                        return [4, postService_1.default.delete(post_id)];
+                    case 1:
+                        response = _a.sent();
+                        res.json(response);
+                        return [3, 3];
+                    case 2:
+                        e_6 = _a.sent();
+                        console.log(e_6);
+                        next(e_6);
+                        return [3, 3];
+                    case 3: return [2];
+                }
+            });
+        });
+    };
     return postsController;
 }());
 exports.default = new postsController();

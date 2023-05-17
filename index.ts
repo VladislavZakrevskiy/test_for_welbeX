@@ -7,6 +7,7 @@ import postsRouter from './routes/postRoutes'
 import {ErrorMiddleware} from './middlewares/errorMiddleware'
 import bodyParser from 'body-parser';
 import fileUpload from 'express-fileupload'
+import path from 'path';
 
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(cors({
     origin: process.env.CLIENT_URL
 }))
 app.use(fileUpload())
+app.use(express.static(path.resolve(__dirname, 'files')))
 
 app.use('/auth', authRouter)
 // app.use('/users', userRouter)

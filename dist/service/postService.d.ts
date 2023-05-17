@@ -4,6 +4,7 @@ declare class postsService {
     getPosts(limit: number, page: number): Promise<import(".prisma/client").Post[]>;
     createPost(message: string, id: string, media: string[]): Promise<import(".prisma/client").Post>;
     updatePost(message: string, id: string): Promise<import(".prisma/client").Post>;
+    delete(post_id: string): Promise<import(".prisma/client").Post>;
 }
 declare const _default: postsService;
 export default _default;

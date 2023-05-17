@@ -116,6 +116,19 @@ var postsService = (function () {
             });
         });
     };
+    postsService.prototype.delete = function (post_id) {
+        return __awaiter(this, void 0, void 0, function () {
+            var post;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4, prisma_1.default.post.delete({ where: { post_id: post_id } })];
+                    case 1:
+                        post = _a.sent();
+                        return [2, post];
+                }
+            });
+        });
+    };
     return postsService;
 }());
 exports.default = new postsService();

@@ -9,8 +9,9 @@ var express_1 = __importDefault(require("express"));
 var router = express_1.default.Router();
 router.get('/:post_id', authMiddleware_1.AuthMiddleware, postController_1.default.getPost);
 router.get('/user', authMiddleware_1.AuthMiddleware, postController_1.default.getPostsUser);
-router.get('/posts', authMiddleware_1.AuthMiddleware, postController_1.default.getPosts);
+router.get('/all', authMiddleware_1.AuthMiddleware, postController_1.default.getPosts);
 router.post('/', authMiddleware_1.AuthMiddleware, postController_1.default.createPost);
 router.patch('/', authMiddleware_1.AuthMiddleware, postController_1.default.update);
+router.delete('/', authMiddleware_1.AuthMiddleware, postController_1.default.delete);
 exports.default = router;
 //# sourceMappingURL=postRoutes.js.map
