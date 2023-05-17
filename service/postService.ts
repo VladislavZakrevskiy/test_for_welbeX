@@ -32,6 +32,11 @@ class postsService {
         const post = await prisma.post.update({data: {message}, where: {post_id: id}})
         return post
     }
+
+    async delete(post_id: string) {
+        const post = await prisma.post.delete({where: {post_id}})
+        return post
+    }
 }
 
 

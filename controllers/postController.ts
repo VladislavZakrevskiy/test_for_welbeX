@@ -64,6 +64,17 @@ class postsController {
         }
     }
 
+    async delete (req: Request, res: Response, next: NextFunction) {
+        try {
+            const {post_id} = req.body
+            const response = await postService.delete(post_id)
+            res.json(response)
+        } catch (e) {
+            console.log(e)
+            next(e)
+        }
+    }
+
 }
 
 export default new postsController()
